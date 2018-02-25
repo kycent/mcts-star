@@ -155,6 +155,13 @@ class Game(object):
         else:
             return 0
 
+    def isEnd(self):
+        blocks = self.getAvailableBlocks()
+        for b in blocks:
+            if len(b.members) > 1:
+                return False
+        return True
+
 if __name__ == "__main__":
     game = Game()
     game.map = [
